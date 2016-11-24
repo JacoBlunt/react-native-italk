@@ -11,6 +11,7 @@ import {
 
 //第三方组件
 import { List, ListItem } from 'react-native-elements'
+import {Actions} from 'react-native-router-flux'
 
 //创建一个DataSource对象
 const ds = new ListView.DataSource({
@@ -19,16 +20,6 @@ const ds = new ListView.DataSource({
 });
 
 const list = [
-    {
-        name: 'Amy Farha',
-        avatar_url: 'http://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-        subtitle: 'Vice President'
-    },
-    {
-        name: 'Chris Jackson',
-        avatar_url: 'http://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-        subtitle: 'Vice Chairman'
-    },
     {
         name: 'Amy Farha',
         avatar_url: 'http://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
@@ -102,7 +93,7 @@ export default class ChatsList extends Component {
                 title={rowData.name}
                 subtitle={rowData.subtitle}
                 avatar={{uri:rowData.avatar_url}}
-                onPress={_onPress}
+                onPress={Actions.ChatingRoom}
             />
         )
     }
